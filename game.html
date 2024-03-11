@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale.0">
+  <title>JavaScript Quiz Game</title>
+    
+</head>
+<body>
+  <h1>Küberturvalisuse mäng</h1>
+  <h2 id="question"></h2>
+  <h3 id="playerHP"></h3>
+  <h3 id="questionsRemaining"></h3>
+  <h3 id="totalQuestions"></h3>
+  <input type="radio" name="option" value="0" id="option0" />
+  <label for="option0">Valik 1</label><br />
+  <input type="radio" name="option" value="1" id="option1" />
+  <label for="option1">Valik 2</label><br />
+  <input type="radio" name="option" value="2" id="option2" />
+  <label for="option2">Valik 3</label><br />
+  <input type="radio" name="option" value="3" id="option3" />
+  <label for="option3">Valik 4</label><br />
+  
+  <button id="check-answer-btn">Kinnita</button>
+  <p id="result-statement"></p>
+  <script>// Array of questions
+        let playerHP;
+        let questionsRemaining = 0;
+        let totalQuestions;
+
+        function setDefaultValues(){
+          playerHP = 3;
+          questionsRemaining = totalQuestions;
+        }
+        function updateUI(){
+          document.getElementById('playerHP').textContent=`Mängija elud: ${playerHP}`;
+          document.getElementById('questionsRemaining').textContent=`Küsimusi jäänud: ${questionsRemaining}`;
+          document.getElementById('totalQuestions').textContent=`Küsimusi kokku: ${totalQuestions}`;
+        }
+
+    const questions = [
+        {
+          question: "What is the output of 'console.log(5 + " + "3)' in JavaScript?",
+          options: ["7", "8", "10","4"],
+          answer: 1,
+          explanation: "Lorem ipsum"
+        },
+        {
+          question: "Which of the following is NOT a JavaScript data type?",
+          options: ["Number", "String", "Boolean", "Pizza"],
+          answer: 3,
+          explanation: "Lorem ipsum"
+        },
+        {
+          question: "Which event occurs when the user clicks on an HTML element?",
+          options: ["onchange", "onclick", "onmouseover", "onfocus"],
+          answer: 1,
+          explanation: "Lorem ipsum"
+        }
+
+      ];
+    
+      let selectedInputIndex;
+      const optionsEl = document.querySelectorAll('input[name="option"]');
+for (let i = 0; i < optionsEl.length; i++) {
+  optionsEl[i].addEventListener("click", function(event) {
+    selectedInputIndex = Array.from(optionsEl).indexOf(event.target);
+    questionsRemaining++;
+    console.log("Valitud input indeks:", selectedInputIndex);
+  });
+}
+      
+      
+      // Function to display the question and options
+      function showQuestion() {
+       
+    
+        const qIndex = Math.floor(Math.random() * questions.length);
+        const q = questions[qIndex];
+
+        const questionEl = document.getElementById("question");
+        questionEl.textContent = q.question;
+
+        const optionsEl = document.getElementsByTagName("input");
+        for (let i = 0; i < optionsEl.length; i++) {
+          optionsEl[i].value = q.options[i];
+          optionsEl[i].checked = false;
+
+          // Get the label associated with the current input element
+          const labelForOption = document.querySelector(`label[for="option${i}"]`);
+
+          // Set the label text to include the index
+          labelForOption.textContent = `Valik ${i + 1}: ${q.options[i]}`;
+        }
+
+        // Store the current question index for answer checking
+        currentQuestionIndex = qIndex;
+      }
+
+      // Function to check the answer
+      function checkAnswer() {
+      
+        
+      //const userAnswer = parseInt(document.querySelector('input[name="option"]:checked').value,10);
+      const correctAnswer = questions[currentQuestionIndex].answer;
+      const explanationForAnswer = questions[currentQuestionIndex].explanation;
+      const resultStatementEl = document.getElementById("result-statement"); 
+      console.log(selectedInputIndex);
+      //console.log(userAnswer);
+      console.log(correctAnswer);
+      if (selectedInputIndex === correctAnswer) {
+        resultStatementEl.textContent = `Õige! ${explanationForAnswer}`;
+      } else {
+        resultStatementEl.textContent = `Vale. Õige vastus on: ${questions[currentQuestionIndex].options[correctAnswer]}. ${explanationForAnswer}`;
+        playerHP--;
+      }
+
+      // Move on to the next question
+      questions.splice(currentQuestionIndex, 1);
+      questionsRemaining--;
+      if (questions.length === 0) {
+        if(selectedInputIndex===correctAnswer){
+          resultStatementEl.textContent = `Mäng on lõppenud! Vastus oli õige! ${explanationForAnswer}`;
+        }
+        else{
+          resultStatementEl.textContent = `Mäng on lõppenud! Vastus oli vale! ${explanationForAnswer}`;
+        }
+        
+      } else {
+        updateUI();
+        showQuestion();
+      }
+    }
+    //totalQuestions = questions.length;
+    //questionsRemaining = totalQuestions;
+    setDefaultValues();
+    updateUI();
+    // Initialize the quiz
+    showQuestion();
+
+    // Event listener for the check answer button
+    document.getElementById("check-answer-btn").addEventListener("click", checkAnswer);</script>
+</body>
+</html>
