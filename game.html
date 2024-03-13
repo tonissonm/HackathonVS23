@@ -21,8 +21,9 @@
     <input type="radio" name="option" value="3" id="option3" />
     <label for="option3">Valik 4</label><br />
     
-    <button id="check-answer-btn">Kinnita</button>
     <p id="result-statement"></p>
+    <button id="check-answer-btn">Kinnita</button>
+    
     <div id="end-game">
       <button id="restart-btn">Alusta uuesti</button>
     </div>
@@ -120,11 +121,15 @@
 
           if (playerHP === 0 || questionsRemaining === 0) {
             state = 0; // Mäng lõppenud
+            updateUI();
             if (playerHP === 0) {
               resultStatementEl.textContent = "Mäng on lõppenud! Mängija elud on otsas!";
+              console.log(resultStatementEl.textContent);
             } else {
               resultStatementEl.textContent = "Mäng on lõppenud! Küsimused on otsas!";
+              console.log(resultStatementEl.textContent);
             }
+           
             endGame();
           } else {
             updateUI();
