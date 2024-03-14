@@ -1,172 +1,3 @@
-<<<<<<< HEAD:game.html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale.0">
-  <title>JavaScript Quiz Game</title>
-    
-</head>
-<body>
-  <h1>Küberturvalisuse mäng</h1>
-    <h2 id="question"></h2>
-    <h3 id="playerHP"></h3>
-    <h3 id="questionsRemaining"></h3>
-    <h3 id="totalQuestions"></h3>
-    <input type="radio" name="option" value="0" id="option0" />
-    <label for="option0">Valik 1</label><br />
-    <input type="radio" name="option" value="1" id="option1" />
-    <label for="option1">Valik 2</label><br />
-    <input type="radio" name="option" value="2" id="option2" />
-    <label for="option2">Valik 3</label><br />
-    <input type="radio" name="option" value="3" id="option3" />
-    <label for="option3">Valik 4</label><br />
-    
-    <p id="result-statement"></p>
-    <button id="check-answer-btn">Kinnita</button>
-    
-    <div id="end-game">
-      <button id="restart-btn">Alusta uuesti</button>
-    </div>
-    
-    <script>
-      
-      //Küsimused
-      let state; // 0 - mäng lõppenud, 1 - mäng käib
-      let playerHP;
-      let totalQuestions;
-      let currentQuestionIndex = 0;
-      let questionsRemaining;
-      let stateoptions = ['Working', 'Stopped'];
-      
-      const questions = [
-        {
-          question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
-          options: ["7", "8", "10", "4"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
-          options: ["Number", "String", "Boolean", "Pizza"],
-          answer: 3,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
-          options: ["onchange", "onclick", "onmouseover", "onfocus"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        }
-      ];
-
-
-      function setDefaultValues() {
-        state = 1;
-        playerHP = 2;
-        totalQuestions = questions.length;
-        questionsRemaining = totalQuestions;
-        console.log(`Algus küsimusjäänud ${questionsRemaining}`);
-      }
-
-      function updateUI() {
-        document.getElementById('playerHP').textContent = `Mängija elud: ${playerHP}`;
-        document.getElementById('questionsRemaining').textContent = `Küsimusi jäänud: ${questionsRemaining}`;
-        document.getElementById('totalQuestions').textContent = `Küsimusi kokku: ${totalQuestions}`;
-      }
-      let selectedInputIndex;
-      const optionsEl = document.querySelectorAll('input[name="option"]');
-      for (let i = 0; i < optionsEl.length; i++) {
-        optionsEl[i].addEventListener("click", function (event) {
-          selectedInputIndex = Array.from(optionsEl).indexOf(event.target);
-          //questionsRemaining--;
-          console.log("Valitud input indeks:", selectedInputIndex);
-        });
-      }
-
-      function showQuestion() {
-        if (state === 1) {
-          const q = questions[currentQuestionIndex];
-          const questionEl = document.getElementById("question");
-          questionEl.textContent = q.question;
-
-          const optionsEl = document.getElementsByTagName("input");
-          for (let i = 0; i < optionsEl.length; i++) {
-            optionsEl[i].value = q.options[i];
-            optionsEl[i].checked = false;
-            const labelForOption = document.querySelector(`label[for="option${i}"]`);
-            labelForOption.textContent = `Valik ${i + 1}: ${q.options[i]}`;
-          }
-
-          currentQuestionIndex++;
-        }
-      }
-
-      function checkAnswer() {
-        if (state === 1) {
-          const correctAnswer = questions[currentQuestionIndex - 1].answer;
-          const explanationForAnswer = questions[currentQuestionIndex - 1].explanation;
-          const resultStatementEl = document.getElementById("result-statement");
-          console.log(selectedInputIndex);
-          console.log(correctAnswer);
-          if (selectedInputIndex === correctAnswer) {
-            resultStatementEl.textContent = `Õige! ${explanationForAnswer}`;
-            questionsRemaining--;
-            console.log(`Küsimus vastatud ${questionsRemaining}`);
-          } else {
-            resultStatementEl.textContent = `Vale. Õige vastus on: ${questions[currentQuestionIndex - 1].options[correctAnswer]}. ${explanationForAnswer}`;
-            playerHP--;
-            questionsRemaining--;
-            console.log(`Küsimus vastatud ${questionsRemaining}`);
-          }
-
-          if (playerHP === 0 || questionsRemaining === 0) {
-            state = 0; // Mäng lõppenud
-            updateUI();
-            if (playerHP === 0) {
-              resultStatementEl.textContent = "Mäng on lõppenud! Mängija elud on otsas!";
-              console.log(resultStatementEl.textContent);
-            } else {
-              resultStatementEl.textContent = "Mäng on lõppenud! Küsimused on otsas!";
-              console.log(resultStatementEl.textContent);
-            }
-           
-            endGame();
-          } else {
-            updateUI();
-            showQuestion();
-          }
-        }
-      }
-
-      function endGame() {
-        
-        document.getElementById("result-statement").style.display = "none";
-        document.getElementById("restart-btn").style.display = "block"; // Näita taaskäivitamise nuppu
-      }
-
-      document.getElementById("restart-btn").addEventListener("click", function () {
-        setDefaultValues();
-        updateUI();
-        showQuestion();
-        
-        document.getElementById("result-statement").style.display = "block";
-        document.getElementById("restart-btn").style.display = "none"; // Peida taaskäivitamise nupp uuesti
-        state = 1;
-      });
-
-      // Peida taaskäivitamise nupp alguses
-      document.getElementById("restart-btn").style.display = "none";
-
-      totalQuestions = questions.length;
-      setDefaultValues();
-      updateUI();
-      showQuestion();
-      document.getElementById("check-answer-btn").addEventListener("click", checkAnswer);    
-     
-    </script>
-</body>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -197,6 +28,7 @@
   
     <div class="container" style="align-items: center;">
       <div class="box"><h3 id="playerHP"></h3></div>
+      <div class="box"><h3 id="score"></h3></div>
       <div class="box"><h3 id="questionsRemaining"></h3></div>
       <div class="box"><h3 id="totalQuestions"></h3></div>
     </div>
@@ -282,8 +114,193 @@
         },
         
       ];
+      function resetQuestions() {
+        // Taasta algne küsimuste massiiv
+        questions.length = 0;
+        questions.push(
+            {
+            question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
+            options: ["7", "8", "10", "4"],
+            answer: 1,
+            explanation: "Lorem ipsum"
+          },
+          {
+            question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
+            options: ["Number", "String", "Boolean", "Pizza"],
+            answer: 3,
+            explanation: "Lorem ipsum"
+          },
+          {
+            question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
+            options: ["onchange", "onclick", "onmouseover", "onfocus"],
+            answer: 1,
+            explanation: "Lorem ipsum"
+          },
+          {
+            question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
+            options: ["7", "13", "10", "4"],
+            answer: 1,
+            explanation: "Lorem ipsum"
+          },
+          {
+            question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
+            options: ["7", "13", "16", "4"],
+            answer: 2,
+            explanation: "Lorem ipsum"
+          },
+          {
+            question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
+            options: ["7", "13", "10", "4"],
+            answer: 0,
+            explanation: "Lorem ipsum"
+          });
+      }
+    function setDefaultValues() {
+          state = 1;
+          score = 0;
+          playerHP = 2;
+          totalQuestions = questions.length;
+          questionsRemaining = totalQuestions;
+          console.log(`Algus küsimusjäänud ${questionsRemaining}`);
+      }
 
+      function updateUI() {
+          document.getElementById('playerHP').textContent = `Mängija elud: ${playerHP}`;
+          document.getElementById('score').textContent = `Skoor: ${score}`;
+          document.getElementById('questionsRemaining').textContent = `Küsimusi jäänud: ${questionsRemaining}`;
+          document.getElementById('totalQuestions').textContent = `Küsimusi kokku: ${totalQuestions}`;
+      }
 
+      let selectedInputIndex;
+      const optionsEl = document.querySelectorAll('input[name="option"]');
+      for (let i = 0; i < optionsEl.length; i++) {
+          optionsEl[i].addEventListener("click", function (event) {
+              selectedInputIndex = Array.from(optionsEl).indexOf(event.target);
+              //questionsRemaining--;
+              console.log("Valitud input indeks:", selectedInputIndex);
+          });
+      }
+
+    function resetGame() {
+        // Lähtesta kõik muutujad algväärtustele
+        playerHP = 2;
+        totalQuestions = questions.length;
+        currentQuestionIndex = 0;
+        questionsRemaining = totalQuestions;
+        state = 1; // Mäng aktiivne olekusse tagasi
+        // Peida mängu lõpustseen
+        enableRestartButton();
+        // Näita küsimuste konteinerit
+        // Lähtesta UI
+        
+        updateUI();
+        // Näita esimest küsimust
+        showQuestion();
+    }
+    function enableRestartButton(){
+        // Aktiveeri taaskäivitamise nupp
+        document.getElementById("restart-btn").disabled = true;
+        // Lisa addEventListener uuesti
+        document.getElementById("restart-btn").addEventListener("click", resetGame);
+    }
+    function highlightAnswer(isCorrect, selectedIndex) {
+        const optionsEl = document.querySelectorAll('input[name="option"]');
+        const selectedLabel = document.querySelector(`label[for="option${selectedIndex}"]`);
+
+        if (isCorrect) {
+            selectedLabel.classList.add('correct');
+        } else {
+            selectedLabel.classList.add('incorrect');
+        }
+
+        // Reset the color after 1 second
+        setTimeout(() => {
+            selectedLabel.classList.remove('correct', 'incorrect');
+        }, 1000);
+    }
+
+      
+
+      function showQuestion() {
+          if (state === 1) {
+              const q = questions[currentQuestionIndex];
+              const questionEl = document.getElementById("question");
+              questionEl.textContent = q.question;
+
+              const optionsEl = document.getElementsByTagName("input");
+              for (let i = 0; i < optionsEl.length; i++) {
+                  optionsEl[i].value = q.options[i];
+                  optionsEl[i].checked = false;
+                  const labelForOption = document.querySelector(`label[for="option${i}"]`);
+                  labelForOption.textContent = `Valik ${i + 1}: ${q.options[i]}`;
+              }
+
+              currentQuestionIndex++;
+          }
+      }
+
+      function checkAnswer() {
+          if (state === 1) {
+              const correctAnswer = questions[currentQuestionIndex - 1].answer;
+              const explanationForAnswer = questions[currentQuestionIndex - 1].explanation;
+              const resultStatementEl = document.getElementById("result-statement");
+              console.log(selectedInputIndex);
+              console.log(correctAnswer);
+              if (selectedInputIndex === correctAnswer) {
+                    highlightAnswer(true,selectedInputIndex);
+                    resultStatementEl.textContent = `Õige! ${explanationForAnswer}`;
+                    questionsRemaining--;
+                    score = score + 10;
+                    console.log(`Skoor: ${score}`);
+                    console.log(`Küsimus vastatud ${questionsRemaining}`);
+              } else {
+                    highlightAnswer(true,selectedInputIndex);
+                    resultStatementEl.textContent = `Vale. Õige vastus on: ${questions[currentQuestionIndex - 1].options[correctAnswer]}. ${explanationForAnswer}`;
+                    playerHP--;
+                    questionsRemaining--;
+                    console.log(`Küsimus vastatud ${questionsRemaining}`);
+              }
+
+              if (playerHP === 0 || questionsRemaining === 0) {
+                  state = 0; // Mäng lõppenud
+                  updateUI();
+                  if (playerHP === 0) {
+                      resultStatementEl.textContent = "Mäng on lõppenud! Mängija elud on otsas!";
+                      console.log(resultStatementEl.textContent);
+                  } else {
+                      resultStatementEl.textContent = "Mäng on lõppenud! Küsimused on otsas!";
+                      console.log(resultStatementEl.textContent);
+                  }
+
+                  endGame();
+              } else {
+                  setTimeout(()=>{
+                    updateUI();
+                    showQuestion(); 
+                  },1000)
+                  
+              }
+          }
+      }
+
+      function endGame() {
+        document.getElementById("restart-btn").disabled = false;
+          //document.getElementById("restart-btn").style.display = "block"; 
+          // Näita taaskäivitamise nuppu
+      }
+
+    document.getElementById("restart-btn").addEventListener("click", resetGame);
+
+    // Peida taaskäivitamise nupp alguses
+    document.getElementById("restart-btn").style.display = "block";
+    document.getElementById("restart-btn").disabled = true;
+
+    setDefaultValues();
+    updateUI();
+    showQuestion();
+    document.getElementById("check-answer-btn").addEventListener("click", checkAnswer); 
+
+/*
       function setDefaultValues() {
         state = 1;
         playerHP = 3;
@@ -382,7 +399,7 @@
       updateUI();
       showQuestion();
       document.getElementById("check-answer-btn").addEventListener("click", checkAnswer);    
-     
+       */ 
     </script>
     <header id="footer">
         <footer id="footers">

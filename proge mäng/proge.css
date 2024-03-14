@@ -75,7 +75,12 @@ transform: scale(2);
 margin-right: 15px;
 }
 
-
+.correct{
+    background-color:lightgreen;
+}
+.incorrect{
+    background-color: red;
+}
 
 
 .Kinnita{
