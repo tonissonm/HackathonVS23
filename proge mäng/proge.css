@@ -5,7 +5,7 @@ font-family: Poppins, sans-serif;
 line-height: 1;
 margin: auto;
 z-index: 0;
-background-color: #89cff0;
+background-color: #eeecec;
 justify-content: center;
 align-items: center;
 }
@@ -46,11 +46,12 @@ padding: 4px;
 
 .box1 {
 width: 30%;
-border: 1px solid black;
+border: 1px solid #eeecec;
 padding: 10px;
 box-sizing: border-box;
 text-align: center;
 margin-top: auto;
+background-color: #eeecec;
 }
 
 .box1:last-child {
@@ -61,13 +62,14 @@ margin-right: 0;
 input[type="radio"]{
 padding: 0.5em;
 -webkit-appearance: none;
-outline: 0.1em solid black;
+outline: 0.1em solid rgb(0, 0, 0);
 outline-offset: 0.1em;
+background-color: #eeecec;
 }
 
 input[type="radio"]:checked{
 display: inline-block;
-background-color: #000;
+background-color: #008385;
 }
 
 
@@ -98,12 +100,12 @@ margin-top: 20px;
 height: 40px;
 width: 200px;
 font-size: 24px;
-background-color: #ffb04d;
+background-color: #00afb1;
 }
 .Kinnita button:hover{
 transition: 0.35s;
 transform: scale(1.2);
-background-color: rgb(254, 129, 129);
+background-color: #008385;
 }
 .uuesti{
 align-items: center;
@@ -118,12 +120,12 @@ margin-top: 10px;
 height: 40px;
 width: 200px;
 font-size: 24px;
-background-color: #ffb04d;
+background-color: #00afb1;
 }
 .uuesti button:hover{
 transition: 0.35s;
 transform: scale(1.2);
-background-color: rgb(254, 129, 129);
+background-color: #008385;
 }
 
 .vastus{
@@ -135,7 +137,7 @@ padding: 0;
 }
 
 #navbar {
-background: #ffb04d;
+background: #00afb1;
 color: #000000;
 position: fixed;
 width: 100%;
@@ -165,7 +167,7 @@ margin: 0 0.25rem;
 }
 
 #navbar ul li a:hover {
-background: #89cff0;
+background: #008385;
 border-radius: 500px;
 }
 
@@ -176,7 +178,7 @@ margin-top: 150px;
 
 
 #footers{
-background-color: #ffdab9;
+background-color: #00afb1;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -187,13 +189,4 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 20vh;
-}
-#footers a {
-color: white;
-text-decoration: none;
-margin: 0 5px;
-}
-
-#footers a:hover {
-color: #ccc;
 }
