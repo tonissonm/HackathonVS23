@@ -34,6 +34,7 @@
       <div class="box"><h3 id="totalQuestions"></h3></div>
     </div>
     <h2 id="question" style="text-align: center; margin-top: 50px;font-size: 50px;"></h2>
+    <img id="image" src="../menüü/"> <!--SEE ON VAJA TEHA ÄRA!-->
 
     <div class="container1" style="margin-top: 120px;">
       <div class="box1" id="option0Box"style="width: auto;"><input type="radio" name="option" value="0" id="option0" ><label for="option0"></label><br /></div>
@@ -77,42 +78,48 @@
     
       
       const questions = [
-        {
-          question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
-          options: ["7", "8", "10", "4"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
-          options: ["Number", "String", "Boolean", "Pizza"],
-          answer: 3,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
-          options: ["onchange", "onclick", "onmouseover", "onfocus"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
-          options: ["7", "13", "10", "4"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
-          options: ["7", "13", "16", "4"],
-          answer: 2,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
-          options: ["7", "13", "10", "4"],
-          answer: 0,
-          explanation: "Lorem ipsum"
-        },
+          {
+            question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
+            options: ["7", "8", "10", "4"],
+            answer: 1,
+            explanation: "Lorem ipsum",
+            image:"../menüü/cyber.png"
+          },
+          {
+            question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
+            options: ["Number", "String", "Boolean", "Pizza"],
+            answer: 3,
+            explanation: "Lorem ipsum",
+            image:null
+          },
+          {
+            question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
+            options: ["onchange", "onclick", "onmouseover", "onfocus"],
+            answer: 1,
+            explanation: "Lorem ipsum",
+            image:null
+          },
+          {
+            question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
+            options: ["7", "13", "10", "4"],
+            answer: 1,
+            explanation: "Lorem ipsum",
+            image:null
+          },
+          {
+            question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
+            options: ["7", "13", "16", "4"],
+            answer: 2,
+            explanation: "Lorem ipsum",
+            image:null
+          },
+          {
+            question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
+            options: ["7", "13", "10", "4"],
+            answer: 0,
+            explanation: "Lorem ipsum",
+            image:null
+          },
         
       ];
       function resetQuestions() {
@@ -123,37 +130,43 @@
             question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
             options: ["7", "8", "10", "4"],
             answer: 1,
-            explanation: "Lorem ipsum"
+            explanation: "Lorem ipsum",
+            image:"../menüü/cyber.png"
           },
           {
             question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
             options: ["Number", "String", "Boolean", "Pizza"],
             answer: 3,
-            explanation: "Lorem ipsum"
+            explanation: "Lorem ipsum",
+            image:null
           },
           {
             question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
             options: ["onchange", "onclick", "onmouseover", "onfocus"],
             answer: 1,
-            explanation: "Lorem ipsum"
+            explanation: "Lorem ipsum",
+            image:null
           },
           {
             question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
             options: ["7", "13", "10", "4"],
             answer: 1,
-            explanation: "Lorem ipsum"
+            explanation: "Lorem ipsum",
+            image:null
           },
           {
             question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
             options: ["7", "13", "16", "4"],
             answer: 2,
-            explanation: "Lorem ipsum"
+            explanation: "Lorem ipsum",
+            image:null
           },
           {
             question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
             options: ["7", "13", "10", "4"],
             answer: 0,
-            explanation: "Lorem ipsum"
+            explanation: "Lorem ipsum",
+            image:null
           });
       }
     function setDefaultValues() {
@@ -241,6 +254,7 @@
           if (state === 1) {
               const q = questions[currentQuestionIndex];
               const questionEl = document.getElementById("question");
+              const imageEl = document.getElementById("image");
               questionEl.textContent = q.question;
 
               const optionsEl = document.getElementsByTagName("input");
@@ -250,10 +264,19 @@
                   const labelForOption = document.querySelector(`label[for="option${i}"]`);
                   labelForOption.textContent = `Valik ${i + 1}: ${q.options[i]}`;
               }
+              if (q.image) { 
+                imageEl.src = q.image;
+                imageEl.style.display = "block"; 
+              }
+              else{
+                imageEl.style.display = "none"; // Hide the image if there isn't one
+              }
+              
+          }
 
               currentQuestionIndex++;
-          }
-      }
+        }
+      
 
       function checkAnswer() {
           if (state === 1) {
