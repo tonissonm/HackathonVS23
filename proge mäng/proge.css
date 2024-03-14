@@ -19,17 +19,16 @@ scroll-behavior: smooth;
 .container {
 display: flex;
 align-items: center;
-margin-left: 150px;
-position: relative;
+justify-content: space-evenly;
 }
 
+
 .box {
-width: 30%;
+width: 12%;
 border: 1px solid black;
 padding: 10px;
 box-sizing: border-box;
 text-align: center;
-margin-right: 10px;
 }
 
 .box:last-child {
@@ -173,7 +172,7 @@ border-radius: 500px;
 
 #Esileht {
 height: 1000px;
-margin-top: 150px;
+margin-top: 110px;
 }
 
 
@@ -189,4 +188,26 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 20vh;
+}
+
+.pildiraam{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 70px;
+}
+
+.pilt{
+    width: 200px;
+    height: 200px;
+    background-color: #eeecec;
+    text-align: center;
+    line-height: 110px;
+}
+.pilt img{
+    width: 200px;
+    height: 200px;
+    object-fit: center;
+    border-radius: 8px;
+    justify-content: center;
+
 }
