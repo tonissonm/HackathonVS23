@@ -23,7 +23,7 @@
     </nav>
 </header> 
 <header id="Esileht">
-<h1 style="text-align: center;">Küberturvalisuse mäng</h1>
+<h1 style="text-align: center;">Proge mäng</h1>
   
   
     <div class="container" style="align-items: center;">
@@ -155,7 +155,7 @@
             explanation: "Lorem ipsum"
           });
       }
-    function setDefaultValues() {
+      function setDefaultValues() {
           //Lisame algväärtused
           state = 1;
           score = 0;
@@ -188,6 +188,7 @@
         totalQuestions = questions.length;
         currentQuestionIndex = 0;
         questionsRemaining = totalQuestions;
+        score = 0;
         state = 1; // Mäng aktiivne olekusse tagasi
         // Peida mängu lõpustseen
         enableRestartButton();
@@ -218,7 +219,7 @@
   
         // Reset the color after 1 second
         setTimeout(() => {
-            selectedLabel.classList.remove('correct', 'incorrect');
+            selectedBox.classList.remove('correct', 'incorrect');
         }, 1000);
         
        /*
@@ -240,6 +241,7 @@
           if (state === 1) {
               const q = questions[currentQuestionIndex];
               const questionEl = document.getElementById("question");
+              const imageEl = document.getElementById("image");
               questionEl.textContent = q.question;
 
               const optionsEl = document.getElementsByTagName("input");
@@ -249,10 +251,19 @@
                   const labelForOption = document.querySelector(`label[for="option${i}"]`);
                   labelForOption.textContent = `Valik ${i + 1}: ${q.options[i]}`;
               }
+              if (q.image) { 
+                imageEl.src = q.image;
+                imageEl.style.display = "block"; 
+              }
+              else{
+                imageEl.style.display = "none"; // Hide the image if there isn't one
+              }
+              
+          }
 
               currentQuestionIndex++;
-          }
-      }
+        }
+      
 
       function checkAnswer() {
           if (state === 1) {

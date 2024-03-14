@@ -24,7 +24,7 @@
     </nav>
 </header> 
 <header id="Esileht">
-<h1 style="text-align: center;">Programmeerimise aluste mäng</h1>
+<h1 style="text-align: center;">Küberkaitse mäng</h1>
   
   
     <div class="container" style="align-items: center;">
@@ -78,96 +78,223 @@
     
       
       const questions = [
-          {
-            question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
-            options: ["7", "8", "10", "4"],
-            answer: 1,
-            explanation: "Lorem ipsum",
-            image:"../menüü/cyber.png"
-          },
-          {
-            question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
-            options: ["Number", "String", "Boolean", "Pizza"],
-            answer: 3,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
-            options: ["onchange", "onclick", "onmouseover", "onfocus"],
-            answer: 1,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
-            options: ["7", "13", "10", "4"],
-            answer: 1,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
-            options: ["7", "13", "16", "4"],
-            answer: 2,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
-            options: ["7", "13", "10", "4"],
-            answer: 0,
-            explanation: "Lorem ipsum",
-            image:null
-          },
+      {
+        question: "Mida tähendab lühend 2FA?",
+        options: ["Krüptograafiline võrguühenduse loomine", "Veebipõhine tulemüür", "Kahefaasiline autentimine", "Privaatvõrgu loomine"],
+        answer: 2,
+        explanation: "2FA on kahefaasiline autentimine, mis on turvameetod kus nõutakse kasutajalt lisaks tavalisele paroolile veel ühte autentimisviisi.",
+        image: null
+      },
+      {
+        question: "Miks kasutatakse 2FA-d?",
+        options: ["Kontode ja süsteemide turvalisuse suurendamiseks", "Paroolide unustamise vältimiseks", "Tõhusama andmeedastuse tagamiseks", "Kasutajakogemuse parandamiseks"],
+        answer: 0,
+        explanation: "2FA abistab kontode ja süsteemide turvalisuse suurendamist. Traditsioonilised paroolid võivad olla haavatud erinevate ründemeetodite suhtes. 2FA lisab turvalisust, nüudes lisaks paroolile veel ühte autentimise tegurit.",
+        image: null
+      },
+      {
+        question: "Mida tähistab lühend DDoS?",
+        options: ["Digital Data Operating System", "Distributed Denial of Service", "Data Destruction and Overload System", "Dynamic Data Overflow Strategy"],
+        answer: 1,
+        explanation: "Distributed Denial of Service ehk hajutatud teenuse keeldumise rünnaku",
+        image: null
+      },
+      {
+        question: "Mis on DDoS rünnaku eesmärk?",
+        options: ["Andmete vargus", "Süsteemi ülekoormamine", "Pettuste läbiviimine", "Andmete krüpteerimine"],
+        answer: 1,
+        explanation: "DDoS’i rünnaku eesmärk on tavaliselt süsteemi või teenuse ülekoormamist, muutes selle kättesaamatuks legitiimsetele kasutajatele.",
+        image: null
+      },
+      {
+        question: "Mis on phishing?",
+        options: ["Pettuslikud e-kirjad või veebilehed, mis püüavad inimesi petta isiklike andmete jagamisel", "Krüptovaluutade kaevandamine", "Salajane krüptograafiline rünnak", "Pettuslikud telefonikõned"],
+        answer: 0,
+        explanation: "Phishing on rünnaku tüüp, kus ründaja loob pettuslikke e-kirju, sõnumeid või veebilehti, mis on suunatud ettevõtetele või organisatsioonidele. Phishingu eesmärk on saada kätte konfidentsiaalseid andmeid, nagu paroole, kasutajanimesid, krediitkaardiandmeid või muud isiklikku teavet.",
+        image: null
+      },
+      {
+        question: "Mis on vishing?",
+        options: ["Pettuslikud e-kirjad või veebilehed, mis püüavad inimesi petta isiklike andmete jagamisel", "Häälpettus, kus ründaja püüab petta inimesi paljastama oma isiklikke või finantsteavet telefonikõne kaudu", "Turvaline krüpteerimismeetod e-posti turvalisuse tagamiseks", "Pettus, mis hõlmab võltsitud veebilehtede loomist, et varastada kasutajate andmeid"],
+        answer: 1,
+        explanation: "Tegu on turvarünnaku vormiga, kus ründaja kasutab telefonikõnesid, et petta inimesi paljastama oma isiklikke või finantsteaved. Ründajad tihti esinevad ennast kui ametliku isikuna.",
+        image: null
+      },
+      {
+        question: "Mis on pharming?",
+        options: ["Võrguliikluse suunamine võltsitud veebisaitidele", "Pettus, mis hõlmab võltsitud e-posti aadresse", "Sotsiaalmeedia pettus", "Küberjälitamine"],
+        answer: 0,
+        explanation: "Tegu on küberkuritegevuse vormiga, kus ründaja manipuleerib arvutivõrku või DN-süsteemi ning suunab võrguliikluse ebaõigete või võltsitud veebisaitidele.",
+        image: null
+      },
+      {
+        question: "Mis on spoofing?",
+        options: ["Pettuslikud veebilehed", "Ebatäpne teave, mis on pärit veebisaitidelt", "Andmete vargus", "Valeidentiteedi loomine võrguliikluses"],
+        answer: 3,
+        explanation: "Tegu on küberkuritegevuse vormiga, kus ründaja loob või varjab oma identiteeti, et ära kasutata isiku usaldusväärsust. Tavaliselt proovitakse saavutata ligipääsu tundlikele andmetele.",
+        image: null
+      },
+      {
+        question: "Miks erineb phishing vishing’ust?",
+        options: ["Phishing hõlmab pettusi e-kirjade kaudu, vishing aga telefonikõnede kaudu", "Phishing hõlmab pettusi sotsiaalmeedia kaudu, vishing aga e-kirjade kaudu", "Phishing hõlmab pettusi telefonikõnede kaudu, vishing aga e-kirjade kaudu", "Phishing hõlmab pettusi võltsitud identideeti kaudu, vishing aga sotsiaalmeedia kaudu"],
+        answer: 0,
+        explanation: "Õige Phishingu rünnakut üldiselt levivad läbi võltsitud e-kirjade, sõnumite või veebilehtede kaudu. Vishingu rünnakut on tavaliselt läbi telefonikõnede.",
+        image:null},
+        {
+          question: "Mis on tulemüüri ülesanne?",
+          options: ["Tarkvara, mis blokeerib teise rakendusi niisama", "Tarkvara, mis kaitseb sinu arvutid tule eest", "Seade, mis kontrollib tule levikut", "Tarkvara, mis hoiab eemal volitamat sissetungijaid"],
+          answer: 3,
+          explanation: "Tulemüür on turvameede, mis on loodud selleks, et kaitsta arvutivõrku või arvutit võimalike kahjulike internetiliikluse eest.",
+          image: null
+        },
+        {
+          question: "Millega tegeleb krüptograafia?",
+          options: ["Andmete salajase edastamisega", "Andmete genereerimisega", "Andmete salakommunikatsiooni kaitsmisega", "Andmete krüpteerimisega"],
+          answer: 3,
+          explanation: "Krüptograafia tegeleb teabe krüpteerimise ja dekrüpteerimisega, et tagada selle konfidentsiaalsust, autentsust ja terviklust. Eesmärk on luua matemaatilisi algoritme ja meetodeid, mis võimaldavad andmete turvalist edastamist ja säilitamist avatud või ebaturvalises keskkonnas.",
+          image: null
+        },
+        {
+          question: "Mis on SQL-injection?",
+          options: ["Andmebaasi tabelisse koodi lisamine", "Massiivse koodi lisandumine andmebaasi töötluseks", "Turvaliselt ühenduse loomine andmebaasiga", "Pahavara sisestamine SQL-koodi baasil andmebaasi turvaaugu leidmisel"],
+          answer: 3,
+          explanation: "Tegu on küberkuritegevusega, mis toimub siis, kui ründaja sisestab pahatahtliku SQL-koodi päringu veebilehe või rakenduse andmebaasi.",
+          image: null
+        },
+        {
+          question: "Mis võiks olla häkkimise peamine põhjus?",
+          options: ["Isikumaine kasvatamist", "Raha teenimine", "Küberturvalisuse parandamine", "Hirmu tekitamine"],
+          answer: 1,
+          explanation: "Ründajad on tavaliselt motiveeritud finantskasu saamiseks, olgu selleks siis otseste rahaliste väärtuste varastamine või raha teenimine muude meetodite abil.",
+          image: null
+        },
+        {
+          question: "Kumb neist on tugev parool?",
+          options: ["qwertious1", "Marel00", "Und3rTh3StAiRS", "parool123!"],
+          answer: 2,
+          explanation: "See parool on turvaline, kuna see on pikk, mitmekesine, mittemõistetav ja mitte korduv.",
+          image: "../pildid/paroolid.png"
+        },
+        {
+          question: "Mis on pahavaraga tegu?",
+          options: ["Tarkvara", "Lunavara", "Pahavara", "Viirusega"],
+          answer: 1,
+          explanation: "Lunavara on pahavara tüüp, mis krüpteerib kasutaja failid ja nõuab seejärel lunaraha dekrüpteerimise eest.",
+          image: "../pildid/pahavara.png"
+        }
+
+
+
         
       ];
       function resetQuestions() {
         // Taastame algse küsimuste massiivi
         questions.length = 0;
         questions.push(
-            {
-            question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
-            options: ["7", "8", "10", "4"],
-            answer: 1,
-            explanation: "Lorem ipsum",
-            image:"../menüü/cyber.png"
-          },
           {
-            question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
-            options: ["Number", "String", "Boolean", "Pizza"],
-            answer: 3,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
-            options: ["onchange", "onclick", "onmouseover", "onfocus"],
-            answer: 1,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
-            options: ["7", "13", "10", "4"],
-            answer: 1,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
-            options: ["7", "13", "16", "4"],
-            answer: 2,
-            explanation: "Lorem ipsum",
-            image:null
-          },
-          {
-            question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
-            options: ["7", "13", "10", "4"],
-            answer: 0,
-            explanation: "Lorem ipsum",
-            image:null
-          });
+        question: "Mida tähendab lühend 2FA?",
+        options: ["Krüptograafiline võrguühenduse loomine", "Veebipõhine tulemüür", "Kahefaasiline autentimine", "Privaatvõrgu loomine"],
+        answer: 2,
+        explanation: "2FA on kahefaasiline autentimine, mis on turvameetod kus nõutakse kasutajalt lisaks tavalisele paroolile veel ühte autentimisviisi.",
+        image: null
+      },
+      {
+        question: "Miks kasutatakse 2FA-d?",
+        options: ["Kontode ja süsteemide turvalisuse suurendamiseks", "Paroolide unustamise vältimiseks", "Tõhusama andmeedastuse tagamiseks", "Kasutajakogemuse parandamiseks"],
+        answer: 0,
+        explanation: "2FA abistab kontode ja süsteemide turvalisuse suurendamist. Traditsioonilised paroolid võivad olla haavatud erinevate ründemeetodite suhtes. 2FA lisab turvalisust, nüudes lisaks paroolile veel ühte autentimise tegurit.",
+        image: null
+      },
+      {
+        question: "Mida tähistab lühend DDoS?",
+        options: ["Digital Data Operating System", "Distributed Denial of Service", "Data Destruction and Overload System", "Dynamic Data Overflow Strategy"],
+        answer: 1,
+        explanation: "Distributed Denial of Service ehk hajutatud teenuse keeldumise rünnaku",
+        image: null
+      },
+      {
+        question: "Mis on DDoS rünnaku eesmärk?",
+        options: ["Andmete vargus", "Süsteemi ülekoormamine", "Pettuste läbiviimine", "Andmete krüpteerimine"],
+        answer: 1,
+        explanation: "DDoS’i rünnaku eesmärk on tavaliselt süsteemi või teenuse ülekoormamist, muutes selle kättesaamatuks legitiimsetele kasutajatele.",
+        image: null
+      },
+      {
+        question: "Mis on phishing?",
+        options: ["Pettuslikud e-kirjad või veebilehed, mis püüavad inimesi petta isiklike andmete jagamisel", "Krüptovaluutade kaevandamine", "Salajane krüptograafiline rünnak", "Pettuslikud telefonikõned"],
+        answer: 0,
+        explanation: "Phishing on rünnaku tüüp, kus ründaja loob pettuslikke e-kirju, sõnumeid või veebilehti, mis on suunatud ettevõtetele või organisatsioonidele. Phishingu eesmärk on saada kätte konfidentsiaalseid andmeid, nagu paroole, kasutajanimesid, krediitkaardiandmeid või muud isiklikku teavet.",
+        image: null
+      },
+      {
+        question: "Mis on vishing?",
+        options: ["Pettuslikud e-kirjad või veebilehed, mis püüavad inimesi petta isiklike andmete jagamisel", "Häälpettus, kus ründaja püüab petta inimesi paljastama oma isiklikke või finantsteavet telefonikõne kaudu", "Turvaline krüpteerimismeetod e-posti turvalisuse tagamiseks", "Pettus, mis hõlmab võltsitud veebilehtede loomist, et varastada kasutajate andmeid"],
+        answer: 1,
+        explanation: "Tegu on turvarünnaku vormiga, kus ründaja kasutab telefonikõnesid, et petta inimesi paljastama oma isiklikke või finantsteaved. Ründajad tihti esinevad ennast kui ametliku isikuna.",
+        image: null
+      },
+      {
+        question: "Mis on pharming?",
+        options: ["Võrguliikluse suunamine võltsitud veebisaitidele", "Pettus, mis hõlmab võltsitud e-posti aadresse", "Sotsiaalmeedia pettus", "Küberjälitamine"],
+        answer: 0,
+        explanation: "Tegu on küberkuritegevuse vormiga, kus ründaja manipuleerib arvutivõrku või DN-süsteemi ning suunab võrguliikluse ebaõigete või võltsitud veebisaitidele.",
+        image: null
+      },
+      {
+        question: "Mis on spoofing?",
+        options: ["Pettuslikud veebilehed", "Ebatäpne teave, mis on pärit veebisaitidelt", "Andmete vargus", "Valeidentiteedi loomine võrguliikluses"],
+        answer: 3,
+        explanation: "Tegu on küberkuritegevuse vormiga, kus ründaja loob või varjab oma identiteeti, et ära kasutata isiku usaldusväärsust. Tavaliselt proovitakse saavutata ligipääsu tundlikele andmetele.",
+        image: null
+      },
+      {
+        question: "Miks erineb phishing vishing’ust?",
+        options: ["Phishing hõlmab pettusi e-kirjade kaudu, vishing aga telefonikõnede kaudu", "Phishing hõlmab pettusi sotsiaalmeedia kaudu, vishing aga e-kirjade kaudu", "Phishing hõlmab pettusi telefonikõnede kaudu, vishing aga e-kirjade kaudu", "Phishing hõlmab pettusi võltsitud identideeti kaudu, vishing aga sotsiaalmeedia kaudu"],
+        answer: 0,
+        explanation: "Õige Phishingu rünnakut üldiselt levivad läbi võltsitud e-kirjade, sõnumite või veebilehtede kaudu. Vishingu rünnakut on tavaliselt läbi telefonikõnede.",
+        image:null},
+        {
+          question: "Mis on tulemüüri ülesanne?",
+          options: ["Tarkvara, mis blokeerib teise rakendusi niisama", "Tarkvara, mis kaitseb sinu arvutid tule eest", "Seade, mis kontrollib tule levikut", "Tarkvara, mis hoiab eemal volitamat sissetungijaid"],
+          answer: 3,
+          explanation: "Tulemüür on turvameede, mis on loodud selleks, et kaitsta arvutivõrku või arvutit võimalike kahjulike internetiliikluse eest.",
+          image: null
+        },
+        {
+          question: "Millega tegeleb krüptograafia?",
+          options: ["Andmete salajase edastamisega", "Andmete genereerimisega", "Andmete salakommunikatsiooni kaitsmisega", "Andmete krüpteerimisega"],
+          answer: 3,
+          explanation: "Krüptograafia tegeleb teabe krüpteerimise ja dekrüpteerimisega, et tagada selle konfidentsiaalsust, autentsust ja terviklust. Eesmärk on luua matemaatilisi algoritme ja meetodeid, mis võimaldavad andmete turvalist edastamist ja säilitamist avatud või ebaturvalises keskkonnas.",
+          image: null
+        },
+        {
+          question: "Mis on SQL-injection?",
+          options: ["Andmebaasi tabelisse koodi lisamine", "Massiivse koodi lisandumine andmebaasi töötluseks", "Turvaliselt ühenduse loomine andmebaasiga", "Pahavara sisestamine SQL-koodi baasil andmebaasi turvaaugu leidmisel"],
+          answer: 3,
+          explanation: "Tegu on küberkuritegevusega, mis toimub siis, kui ründaja sisestab pahatahtliku SQL-koodi päringu veebilehe või rakenduse andmebaasi.",
+          image: null
+        },
+        {
+          question: "Mis võiks olla häkkimise peamine põhjus?",
+          options: ["Isikumaine kasvatamist", "Raha teenimine", "Küberturvalisuse parandamine", "Hirmu tekitamine"],
+          answer: 1,
+          explanation: "Ründajad on tavaliselt motiveeritud finantskasu saamiseks, olgu selleks siis otseste rahaliste väärtuste varastamine või raha teenimine muude meetodite abil.",
+          image: null
+        },
+        {
+          question: "Kumb neist on tugev parool?",
+          options: ["qwertious1", "Marel00", "Und3rTh3StAiRS", "parool123!"],
+          answer: 2,
+          explanation: "See parool on turvaline, kuna see on pikk, mitmekesine, mittemõistetav ja mitte korduv.",
+          image: "../pildid/paroolid.png"
+        },
+        {
+          question: "Mis on pahavaraga tegu?",
+          options: ["Tarkvara", "Lunavara", "Pahavara", "Viirusega"],
+          answer: 1,
+          explanation: "Lunavara on pahavara tüüp, mis krüpteerib kasutaja failid ja nõuab seejärel lunaraha dekrüpteerimise eest.",
+          image: "../pildid/pahavara.png"
+        });
       }
     function setDefaultValues() {
           //Lisame algväärtused

@@ -76,42 +76,104 @@
       
       
       const questions = [
-        {
-          question: "Mis on 'console.log(5 + 3)' väljund JavaScriptis?",
-          options: ["7", "8", "10", "4"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis järgnevatest EI ole JavaScripti andmetüüp?",
-          options: ["Number", "String", "Boolean", "Pizza"],
-          answer: 3,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Millal toimub sündmus, kui kasutaja klõpsab HTML-elementi?",
-          options: ["onchange", "onclick", "onmouseover", "onfocus"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis on 'console.log(10 + 3)' väljund JavaScriptis?",
-          options: ["7", "13", "10", "4"],
-          answer: 1,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis on 'console.log(10 + 6)' väljund JavaScriptis?",
-          options: ["7", "13", "16", "4"],
-          answer: 2,
-          explanation: "Lorem ipsum"
-        },
-        {
-          question: "Mis on 'console.log(9 - 2)' väljund JavaScriptis?",
-          options: ["7", "13", "10", "4"],
-          answer: 0,
-          explanation: "Lorem ipsum"
-        },
+      {
+        question: "Mida tähistab lühend OS?",
+        options: ["Avatud Lähtekood", "Online Teenus", "Operatsioonisüsteem", "Optiline Salvestus"],
+        answer: 2,
+        explanation: "Tegu on Operatsioonisüsteemiga (OS).",
+        image: null
+      },
+      {
+        question: "Millega tegeleb operatsioonisüsteem?",
+        options: ["Tarkvara, mis aitab kaitsta arvutit küberkuritegude eest", "Süsteem, mis võimaldab arvutiraudvara ja tarkvara omavahelist suhtlust ning pakub kasutajaliidest", "Programm, mis vastutab ainult failihalduse eest", "Riistvara, mis reguleerib arvuti toimimist"],
+        answer: 1,
+        explanation: "Operatsioonisüsteem (OS) on tarkvara, mis võimaldab arvutil suhelda arvutis olevate riistvarakomponentide ja muu tarkvaraga.",
+        image: null
+      },
+      {
+        question: "Mis on OS roll arvuti kaitses?",
+        options: ["Ei tee mitte midagi arvuti kaitseks", "Hoiab tarkvara turvalisena", "Hoiab tarkvara kui ka riistvara turvalisena", "Hoiab riistvara turvalisena"],
+        answer: 2,
+        explanation: "Operatsioonisüsteem tegeleb tarkvara ja riistvara autentimise ja autoriseerimisega, tülemüüri ja võrgu turvalisusega, tarkvara vigade parandamisega, andmete krüpteerimisega ja turvaseisundi jälgimisega.",
+        image: null
+      },
+      {
+        question: "Millega on tegemist pildil?",
+        options: ["BIOS’isse sisenemine", "Shutdown", "Booting", "Restartimine"],
+        answer: 2,
+        explanation: "Booting on protsess, mille käigus arvuti käivitab oma OS ja laadib selle mällu, ning valmistab arvutit ette kasutajaliidese kasutamiseks.",
+        image: null
+      },
+      {
+        question: "Mis on kernel OS-is?",
+        options: ["Arvuti füüsiline südamik", "Tarkvarakomponent, mis pakub süsteemi põhilisi teenuseid ja kontrollib arvuti riistvara", "Failisüsteemi põhikomponent", "Graafiline kasutajaliides"],
+        answer: 1,
+        explanation: "Kernel on tarkvarakomponent, mis pakub operatsioonisüsteemi põhilisi teenuseid ja kontrollib arvuti riistvara.",
+        image: null
+      },
+      {
+        question: "Mis on GUI lühend?",
+        options: ["Graphic User Interface", "General User Information", "Graphical User Instruction", "Global User Integration"],
+        answer: 0,
+        explanation: "Tegemist on Graphic User Interface ehk GUI-ga.",
+        image: null
+      },
+      {
+        question: "Millised väited kirjeldavad GUI-d?",
+        options: ["Muudab arvutiprogrammide kasutamist ja intuitiivsust lihtsaks", "Nõuab keerukate käsitsuste õppimist", "Muudab andmete kuvamist keerulisemaks", "Muudab arvuti tausta"],
+        answer: 0,
+        explanation: "GUI on võimeline muutma arvutiprogrammide kasutamist oluliselt lihtsamaks ja intuitiivsemaks, võimaldades kasutajatel suhelda programmidega graafiliste elementide abil.",
+        image: null
+      },
+      {
+        question: "Mis on failisüsteem?",
+        options: ["Meetod, kuidas arvutis hoitakse ja korraldatakse andmeid kettal", "Failide jagamine mitme kasutaja vahel", "Võrgusüsteemi turvameede", "Süsteemi tõrkeotsinguvahend"],
+        answer: 0,
+        explanation: "Failisüsteem on meetod, kuidas arvutis hoitakse ja korraldatakse andmeid kettal.",
+        image: null
+      },
+      {
+        question: "Mis on failikompressioon?",
+        options: ["Meetod failide jagamiseks võrgus", "Meetod failide salvestamiseks pilveserverites", "Meetod failide tihendamiseks, et vähendada salvestusruumi kasutamist", "Meetod failide kopeerimiseks ühelt kandekeskuselt teisele"],
+        answer: 2,
+        explanation: "Failikompressioon abistab salvestusruumi kokkuhoiul, andmete kiire edasiandmisel, varundamise tõhusust, üldisest arvuti kiirusest ja veebilehtede laadimiskiiruse kiirendamist.",
+        image: null
+      },
+      {
+        question: "Mis on multitasking OS kontekstis?",
+        options: ["Võime korraga käivitada mitu programmi ja teha mitut ülesannet", "Ühe programmi käivitamine korraga", "Operatsioonisüsteemi taaskäivitamine", "Andmete jagamine mitme kasutaja vahel"],
+        answer: 0,
+        explanation: "Multitasking on võime korraga käivitada mitu programmi ja teha mitut ülesannet.",
+        image: null
+      },
+      {
+        question: "Mis on protsess?",
+        options: ["Seade, mis reguleerib helitugevust", "Viis mäluruumi puhastada", "Graafilise liidese liitmine", "Programm/rakendus, mis hetkel töötab"],
+        answer: 3,
+        explanation: "Protsess on programm või rakendus, mis hetkel töötab arvutis.",
+        image: null
+      },
+      {
+        question: "Mis eeliseid toob OS arvutikasutajale?",
+        options: ["Lihtne suhtlemine kasutajaliidese kaudu", "Ainult riistvara haldamine", "Ainult võrguühenduse haldamine", "Andmete kuvamine käsurealt"],
+        answer: 0,
+        explanation: "Eelised mida OS toob arvutikasutajale on intuitiivne kasutajaliides, lihtne rakenduste haldamine, juurdepääs veebipõhistele teenustele, automaatne värskenduste haldamine ja veateadeid kui ka tõrkeotsingu võimalust",
+        image: null
+      },
+      {
+        question: "Miks peaks taaskäivitama OS?",
+        options: ["Graafikakaardi parandamine", "Süsteemi jõudluse parandamine", "Tarkvara värskendamine", "Emaplaadi ärkamine"],
+        answer: 2,
+        explanation: "Taaskäivitamine abistab operatsioonisüsteemil värskenduste instaleerimisega, süsteemiressursside vabastamisega, riistvara või tarkvara probleemide lahendamisega ja rikete ja süsteemi värskendamisega.",
+        image: null
+      },
+      {
+        question: "Mis on OS-i primaarne ülesanne süsteemiressursside haldamisel?",
+        options: ["Jaotada maksimaalselt ära kõik ressursid rakenduste vahel", "Optimeerib ressursikasutust ja jaotust", "Piirata täielikult ressursside kättesaadavust isikudele", "Täielikult ressursside piiramine mitme programmi avamisel."],
+        answer: 1,
+        explanation: "Operatsioonisüsteem primaarne ülesanne on optimeerida ressursikasutust ja jaotust. See abistab optimeerida ressursse, muuta mugavaks kasutajaliides, turvalisust hoida ja andmete haldamisega.",
+        image: null
+      }
         
       ];
       function resetQuestions() {
@@ -155,7 +217,7 @@
             explanation: "Lorem ipsum"
           });
       }
-    function setDefaultValues() {
+      function setDefaultValues() {
           //Lisame algväärtused
           state = 1;
           score = 0;
@@ -188,6 +250,7 @@
         totalQuestions = questions.length;
         currentQuestionIndex = 0;
         questionsRemaining = totalQuestions;
+        score = 0;
         state = 1; // Mäng aktiivne olekusse tagasi
         // Peida mängu lõpustseen
         enableRestartButton();
@@ -218,7 +281,7 @@
   
         // Reset the color after 1 second
         setTimeout(() => {
-            selectedLabel.classList.remove('correct', 'incorrect');
+            selectedBox.classList.remove('correct', 'incorrect');
         }, 1000);
         
        /*
@@ -240,6 +303,7 @@
           if (state === 1) {
               const q = questions[currentQuestionIndex];
               const questionEl = document.getElementById("question");
+              const imageEl = document.getElementById("image");
               questionEl.textContent = q.question;
 
               const optionsEl = document.getElementsByTagName("input");
@@ -249,10 +313,19 @@
                   const labelForOption = document.querySelector(`label[for="option${i}"]`);
                   labelForOption.textContent = `Valik ${i + 1}: ${q.options[i]}`;
               }
+              if (q.image) { 
+                imageEl.src = q.image;
+                imageEl.style.display = "block"; 
+              }
+              else{
+                imageEl.style.display = "none"; // Hide the image if there isn't one
+              }
+              
+          }
 
               currentQuestionIndex++;
-          }
-      }
+        }
+      
 
       function checkAnswer() {
           if (state === 1) {
