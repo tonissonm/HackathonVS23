@@ -9,7 +9,7 @@ scroll-behavior: smooth;
 }
 
 #navbar {
-background: #ffb04d;
+background: #00afb1;
 color: #000000;
 position: fixed;
 width: 100%;
@@ -39,12 +39,12 @@ margin: 0 0.25rem;
 }
 
 #navbar ul li a:hover {
-background: #89cff0;
+background: #008385;
 border-radius: 500px;
 }
 
 #Esileht {
-background: rgb(207, 255, 135);
+background: rgb(0, 0, 0);
 background-size: cover;
 background-position: center;
 padding: 3rem; 
@@ -85,7 +85,7 @@ background-color: rgb(254, 129, 129);
 }
 
 #footers{
-background-color: #ffdab9;
+background-color: #00afb1;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -96,15 +96,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 20vh;
-}
-#footers a {
-color: white;
-text-decoration: none;
-margin: 0 5px;
-}
-
-#footers a:hover {
-color: #ccc;
 }
 
 .box-container {
@@ -125,7 +116,7 @@ color: #333;
 }
 
 #menuu{
-background-color: #ffdab9;
+background-color: #eeecec;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
@@ -148,7 +139,7 @@ gap: 70px;
 .squareOSK {
 width: 250px;
 height: 250px;
-background-color: #ffdab9;
+background-color: #eeecec;
 text-align: center;
 line-height: 110px;
 }
@@ -159,7 +150,7 @@ line-height: 110px;
 .squareOSK:hover{
 transition: 0.35s;
 transform: scale(1.33);
-background-color: #89cff0;
+background-color: #008385;
 border-radius: 10px;
 }
 

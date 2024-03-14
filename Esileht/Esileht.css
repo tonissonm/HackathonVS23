@@ -9,7 +9,7 @@ html{
 }
 
 #navbar {
-background: #ffb04d;
+background: #00afb1;
 color: #000000;
 position: fixed;
 width: 100%;
@@ -39,12 +39,12 @@ margin: 0 0.25rem;
 }
 
 #navbar ul li a:hover {
-background: #89cff0;
+background: #008385;
 border-radius: 500px;
 }
 
 #Esileht {
-background: rgb(207, 255, 135);
+background: #eeecec;
 background-size: cover;
 background-position: center;
 padding: 3rem; 
@@ -58,7 +58,6 @@ height: 89.7vh;
 }
 
 #Esileht h1 {
-padding-top: px;
 font-size: 40px;
 color: #000;
 }
@@ -74,17 +73,18 @@ margin-top: 70px;
 font-size: 20px;
 width: 140px;
 height: 50px;
-background-color: rgb(252, 181, 181);
+border-color: #eeecec;
+background-color: #00afb1;
 margin-left: 150px;
 }
 #Esileht button:hover{
 transition: 0.35s;
 transform: scale(1.2);
-background-color: rgb(254, 129, 129);
+background-color: #008385;
 }
 
 #footers{
-    background-color: #ffdab9;
+    background-color: #00afb1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
