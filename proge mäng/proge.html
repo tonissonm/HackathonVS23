@@ -34,12 +34,10 @@
       <div class="box"><h3 id="totalQuestions"></h3></div>
     </div>
     <h2 id="question" style="text-align: center; margin-top: 50px;font-size: 50px;"></h2>
-    <img id="image" src="../menüü/"> <!--SEE ON VAJA TEHA ÄRA!-->
 
     <div class="pildiraam" style="display: flex; justify-content: center;">
-      <div class="pilt">
-        <img id="image" src="../pildid/">
-      </div>
+      <img id="image" src="../pildid/">
+      
     </div>
 
 
@@ -86,6 +84,13 @@
     
       
       const questions = [
+      {
+          question: "Kumb neist on tugev parool?",
+          options: ["qwertious1", "Marel00", "Und3rTh3StAiRS", "parool123!"],
+          answer: 2,
+          explanation: "See parool on turvaline, kuna see on pikk, mitmekesine, mittemõistetav ja mitte korduv.",
+          image: "../pildid/paroolid.png"
+        },
       {
         question: "Mida tähendab lühend 2FA?",
         options: ["Krüptograafiline võrguühenduse loomine", "Veebipõhine tulemüür", "Kahefaasiline autentimine", "Privaatvõrgu loomine"],
@@ -175,13 +180,6 @@
           answer: 1,
           explanation: "Ründajad on tavaliselt motiveeritud finantskasu saamiseks, olgu selleks siis otseste rahaliste väärtuste varastamine või raha teenimine muude meetodite abil.",
           image: null
-        },
-        {
-          question: "Kumb neist on tugev parool?",
-          options: ["qwertious1", "Marel00", "Und3rTh3StAiRS", "parool123!"],
-          answer: 2,
-          explanation: "See parool on turvaline, kuna see on pikk, mitmekesine, mittemõistetav ja mitte korduv.",
-          image: "../pildid/paroolid.png"
         },
         {
           question: "Mis on pahavaraga tegu?",
@@ -402,7 +400,7 @@
               }
               if (q.image) { 
                 imageEl.src = q.image;
-                imageEl.style.display = "block"; 
+                imageEl.style.display = "flex"; 
               }
               else{
                 
