@@ -171,7 +171,7 @@ border-radius: 500px;
 }
 
 #Esileht {
-height: 1000px;
+height: 1100px;
 margin-top: 110px;
 }
 
@@ -224,4 +224,16 @@ height: 20vh;
     border-radius: 8px;
     justify-content: center;
 
+}
+
+
+.kast p{
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    border: 1px solid #eeecec;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #eeecec;
 }
